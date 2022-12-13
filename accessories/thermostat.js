@@ -8,9 +8,14 @@ module.exports = homebridge => {
       super('thermostat', device, index, config, log)
 
       const humidityEnabled = index === 0 && config.humidity
-      const heatingEnabled = config.heating || false
+      const heatingEnabled = config.heating || true
       const coolingEnabled = config.cooling || false
       const hysteresis = config.hysteresis || 0.5
+
+      if (!heatingEnabled && !coolingEnabled) {
+        throw new Error(`Invalid config, 
+          either cooling or heating should be true`)
+      }
 
       if (humidityEnabled && index !== 0) {
         throw new Error(`Invalid config, 
