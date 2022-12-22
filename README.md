@@ -139,7 +139,7 @@ interface of a device, under *Settings -> Device info -> Device ID*.
 * `"humidity"` - true|false, shows humitidy. (only applicable to one and first sensor)
 * `"excludeRelay"` - true|false, hiding the relay (switch) from homebridge. (default: false)
 
-* *For thermostat use:*
+*For thermostat use:*
    * `"type"` - when the relais should act like a thermostat set the type to `"thermostat"` (default: undefined - expose switch & sensors if `"sensors"` > 0)
    * `"humidity"` - true|false, shows humitidy. (only applicable to one sensor) (default: false)
    * `"heating"` - true|false, enable heating on the thermostat. (default: true)
