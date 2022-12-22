@@ -136,6 +136,7 @@ interface of a device, under *Settings -> Device info -> Device ID*.
 #### Shelly 1AddOn configurations
 *Applies to Shelly 1, 1PM*
 * `"sensors"` - 1-3, number of sensors connected to the addon. (default: 0 , max: 3)
+* `"excludeRelay"` - true|false, hiding the relay (switch) from HomeKit
 
 * *For thermostat use:*
    * `"type"` - when the relais should act like a thermostat set the type to `"thermostat"` (default: undefined - expose switch & sensors if `"sensors"` > 0)
