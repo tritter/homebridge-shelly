@@ -11,6 +11,10 @@ enabling HomeKit support for the first generation of Shelly devices.
 
 For the next generation, see [homebridge-shelly-ng](https://github.com/alexryd/homebridge-shelly-ng).
 
+## Compatibility
+* Homebridge `1.11.x`
+* Homebridge `2.0.0-beta.x`
+
 ## Supported devices
 * [Shelly 1](https://shelly.cloud/shelly1-open-source/)
 * [Shelly 1L](https://shelly.cloud/products/shelly-1l-single-wire-smart-home-automation-relay/)
@@ -61,6 +65,12 @@ homebridge.
    [the instructions](https://github.com/homebridge/homebridge/wiki).
 2. Install this plugin using [Homebridge Config UI X](https://github.com/oznu/homebridge-config-ui-x), or by running `npm install -g homebridge-shelly`.
 3. Add the configuration to your homebridge config.json.
+
+### Homebridge v2 beta
+```bash
+[sudo] npm install -g --unsafe-perm homebridge@beta
+[sudo] npm install -g --unsafe-perm homebridge-shelly
+```
 
 ## Configuration
 In most cases, simply adding this plugin to the homebridge config.json will be

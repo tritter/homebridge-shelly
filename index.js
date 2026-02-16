@@ -1,10 +1,11 @@
 
 module.exports = homebridge => {
+  const { PLATFORM_NAME, PLUGIN_NAME } = require('./constants')
   const ShellyPlatform = require('./platform')(homebridge)
 
   homebridge.registerPlatform(
-    'homebridge-shelly',
-    'Shelly',
+    PLUGIN_NAME,
+    PLATFORM_NAME,
     ShellyPlatform,
     true
   )

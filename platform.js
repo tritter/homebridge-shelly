@@ -2,6 +2,7 @@ const os = require('os')
 const shellies = require('@tritter/shellies')
 
 const AdminServer = require('./admin')
+const { PLATFORM_NAME, PLUGIN_NAME } = require('./constants')
 
 module.exports = homebridge => {
   const AccessoryFactory = require('./accessories/factory')(homebridge)
@@ -22,7 +23,11 @@ module.exports = homebridge => {
         .on('discover', this.discoverDeviceHandler, this)
         .on('stale', this.deviceStaleHandler, this)
 
-      homebridge.on('didFinishLaunching', () => {
+      const didFinishLaunchingEvent = homebridge.APIEvent
+        ? homebridge.APIEvent.DID_FINISH_LAUNCHING
+        : 'didFinishLaunching'
+
+      homebridge.on(didFinishLaunchingEvent, () => {
         const num = Array.from(this.deviceWrappers.values()).reduce(
           (n, dw) => n + dw.platformAccessories.length,
           0
@@ -191,8 +196,8 @@ module.exports = homebridge => {
         this.deviceWrappers.set(device, deviceWrapper)
 
         homebridge.registerPlatformAccessories(
-          'homebridge-shelly',
-          'Shelly',
+          PLUGIN_NAME,
+          PLATFORM_NAME,
           deviceWrapper.platformAccessories
         )
 
@@ -209,8 +214,8 @@ module.exports = homebridge => {
       }
 
       homebridge.unregisterPlatformAccessories(
-        'homebridge-shelly',
-        'Shelly',
+        PLUGIN_NAME,
+        PLATFORM_NAME,
         deviceWrapper.platformAccessories
       )
 
@@ -288,8 +293,8 @@ module.exports = homebridge => {
     handleStalePlatformAccessories() {
       if (this.stalePlatformAccessories.size > 0) {
         homebridge.unregisterPlatformAccessories(
-          'homebridge-shelly',
-          'Shelly',
+          PLUGIN_NAME,
+          PLATFORM_NAME,
           Array.from(this.stalePlatformAccessories)
         )
       }
@@ -315,8 +320,8 @@ module.exports = homebridge => {
 
         if (accessory) {
           homebridge.registerPlatformAccessories(
-            'homebridge-shelly',
-            'Shelly',
+            PLUGIN_NAME,
+            PLATFORM_NAME,
             [accessory.platformAccessory]
           )
         }
