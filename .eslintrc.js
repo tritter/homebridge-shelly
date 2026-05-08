@@ -9,6 +9,8 @@ module.exports = {
   ],
 
   rules: {
+    'no-multiple-empty-lines': ['error', { max: 2, maxBOF: 2 }],
+
     'comma-dangle': ['error', 'only-multiline'],
 
     'max-len': ['error', {

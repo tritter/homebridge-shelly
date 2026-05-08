@@ -22,10 +22,10 @@
   ],
   "engines": {
     "node": ">=18.20.0",
-    "homebridge": "^1.11.0 || ^2.0.0-beta.0"
+    "homebridge": "^1.11.0 || ^2.0.0"
   },
   "peerDependencies": {
-    "homebridge": "^1.11.0 || ^2.0.0-beta.0"
+    "homebridge": "^1.11.0 || ^2.0.0"
   },
   "author": "Alexander Rydén",
   "license": "MIT",
@@ -46,11 +46,11 @@
   },
   "devDependencies": {
     "eslint": "^8.57.1",
-    "eslint-config-standard": "^16.0.3",
+    "eslint-config-standard": "^17.1.0",
     "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-n": "^16.0.0",
     "eslint-plugin-promise": "^6.6.0",
-    "homebridge": "^2.0.0-beta.0",
+    "homebridge": "^2.0.0",
     "mocha": "^11.1.0",
     "pre-commit": "^1.2.2",
     "should": "^13.2.3",

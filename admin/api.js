@@ -17,7 +17,7 @@ module.exports = (platform, config, log) => {
       name: device.name,
       modelName: device.modelName,
       online: device.online,
-      lastSeen: lastSeen,
+      lastSeen,
       unknown: shellies.isUnknownDevice(device),
       excluded: !platform.deviceWrappers.has(device),
     }
