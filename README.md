@@ -13,7 +13,7 @@ For the next generation, see [homebridge-shelly-ng](https://github.com/alexryd/h
 
 ## Compatibility
 * Homebridge `1.11.x`
-* Homebridge `2.0.0-beta.x`
+* Homebridge `2.0.x`
 
 ## Supported devices
 * [Shelly 1](https://shelly.cloud/shelly1-open-source/)
@@ -66,9 +66,9 @@ homebridge.
 2. Install this plugin using [Homebridge Config UI X](https://github.com/oznu/homebridge-config-ui-x), or by running `npm install -g homebridge-shelly`.
 3. Add the configuration to your homebridge config.json.
 
-### Homebridge v2 beta
+### Homebridge v2
 ```bash
-[sudo] npm install -g --unsafe-perm homebridge@beta
+[sudo] npm install -g --unsafe-perm homebridge@latest
 [sudo] npm install -g --unsafe-perm homebridge-shelly
 ```
 
