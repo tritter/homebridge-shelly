@@ -1,6 +1,6 @@
 
 module.exports = homebridge => {
-  const Accessory = homebridge.hap.Accessory
+  const Categories = homebridge.hap.Categories
   const DoorAbility = require('../abilities/door')(homebridge)
   const { ShellyAccessory } = require('./base')(homebridge)
 
@@ -16,7 +16,7 @@ module.exports = homebridge => {
     }
 
     get category() {
-      return Accessory.Categories.DOOR
+      return Categories.DOOR
     }
 
     /**

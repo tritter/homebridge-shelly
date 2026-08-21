@@ -1,6 +1,6 @@
 
 module.exports = homebridge => {
-  const Accessory = homebridge.hap.Accessory
+  const Categories = homebridge.hap.Categories
   const WindowCoveringAbility =
     require('../abilities/window-covering')(homebridge)
   const StatelessWindowCoveringAbility =
@@ -20,7 +20,7 @@ module.exports = homebridge => {
     }
 
     get category() {
-      return Accessory.Categories.WINDOW_COVERING
+      return Categories.WINDOW_COVERING
     }
 
     /**
@@ -49,7 +49,7 @@ module.exports = homebridge => {
     }
 
     get category() {
-      return Accessory.Categories.WINDOW_COVERING
+      return Categories.WINDOW_COVERING
     }
 
     /**

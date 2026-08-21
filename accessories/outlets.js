@@ -1,6 +1,6 @@
 
 module.exports = homebridge => {
-  const Accessory = homebridge.hap.Accessory
+  const Categories = homebridge.hap.Categories
   const OutletAbility = require('../abilities/outlet')(homebridge)
   const { ShellyRelayAccessory } = require('./base')(homebridge)
 
@@ -24,7 +24,7 @@ module.exports = homebridge => {
     }
 
     get category() {
-      return Accessory.Categories.OUTLET
+      return Categories.OUTLET
     }
   }
 

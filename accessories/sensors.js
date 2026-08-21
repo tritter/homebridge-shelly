@@ -1,6 +1,6 @@
 
 module.exports = homebridge => {
-  const Accessory = homebridge.hap.Accessory
+  const Categories = homebridge.hap.Categories
   const BatteryAbility = require('../abilities/battery')(homebridge)
   const ContactSensorAbility =
     require('../abilities/contact-sensor')(homebridge)
@@ -25,7 +25,7 @@ module.exports = homebridge => {
     }
 
     get category() {
-      return Accessory.Categories.SENSOR
+      return Categories.SENSOR
     }
   }
 
@@ -99,7 +99,7 @@ module.exports = homebridge => {
     }
 
     get category() {
-      return Accessory.Categories.SENSOR
+      return Categories.SENSOR
     }
   }
 
@@ -115,7 +115,7 @@ module.exports = homebridge => {
     }
 
     get category() {
-      return Accessory.Categories.SENSOR
+      return Categories.SENSOR
     }
   }
 
@@ -131,7 +131,7 @@ module.exports = homebridge => {
     }
 
     get category() {
-      return Accessory.Categories.SENSOR
+      return Categories.SENSOR
     }
   }
 
