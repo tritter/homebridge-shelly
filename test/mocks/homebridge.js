@@ -1,12 +1,14 @@
 const EventEmitter = require('events')
 
-class Accessory {}
-Accessory.Categories = {
+// hap-nodejs 2.x exposes these on the module namespace, not on Accessory.
+const Categories = {
   LIGHTBULB: 'LIGHTBULB',
   SENSOR: 'SENSOR',
   SWITCH: 'SWITCH',
   WINDOW_COVERING: 'WINDOW_COVERING',
 }
+
+class Accessory {}
 
 class Characteristic extends EventEmitter {
   constructor(displayName, UUID, props) {
@@ -273,7 +275,7 @@ class AccessoryInformation extends Service {
 }
 Service.AccessoryInformation = AccessoryInformation
 
-class BatteryService extends Service {
+class Battery extends Service {
   constructor() {
     super()
 
@@ -282,7 +284,7 @@ class BatteryService extends Service {
     this.addCharacteristic(StatusLowBattery)
   }
 }
-Service.BatteryService = BatteryService
+Service.Battery = Battery
 
 class HumiditySensor extends Service {
   constructor() {
@@ -369,6 +371,7 @@ class Homebridge extends EventEmitter {
 
     this.hap = {
       Accessory,
+      Categories,
       Characteristic,
       Service,
       uuid: {

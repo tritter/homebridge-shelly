@@ -25,7 +25,7 @@ module.exports = homebridge => {
     }
 
     get service() {
-      return this.platformAccessory.getService(Service.BatteryService)
+      return this.platformAccessory.getService(Service.Battery)
     }
 
     get level() {
@@ -57,7 +57,7 @@ module.exports = homebridge => {
     }
 
     _createService() {
-      return new Service.BatteryService()
+      return new Service.Battery()
         .setCharacteristic(Characteristic.BatteryLevel, this.level)
         .setCharacteristic(Characteristic.ChargingState, this.chargingState)
         .setCharacteristic(Characteristic.StatusLowBattery, this.statusLow)
