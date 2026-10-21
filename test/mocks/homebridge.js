@@ -193,14 +193,15 @@ class TargetPosition extends Characteristic {
 }
 Characteristic.TargetPosition = TargetPosition
 
-Characteristic.Formats = {
-  FLOAT: 'FLOAT',
+// hap-nodejs 2.x: Formats/Perms on the module namespace, not Characteristic.
+const Formats = {
+  FLOAT: 'float',
 }
 
-Characteristic.Perms = {
-  NOTIFY: 'NOTIFY',
-  READ: 'READ',
-  WRITE: 'WRITE',
+const Perms = {
+  NOTIFY: 'pn',
+  READ: 'pr',
+  WRITE: 'pw',
 }
 
 class PlatformAccessory extends EventEmitter {
@@ -373,6 +374,8 @@ class Homebridge extends EventEmitter {
       Accessory,
       Categories,
       Characteristic,
+      Formats,
+      Perms,
       Service,
       uuid: {
         generate: () => {},

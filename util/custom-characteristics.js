@@ -1,9 +1,11 @@
 
 module.exports = homebridge => {
   const Characteristic = homebridge.hap.Characteristic
+  const hap = homebridge.hap
 
-  const Formats = Characteristic.Formats
-  const Perms = Characteristic.Perms
+  // hap-nodejs 2.x: Formats/Perms on the module namespace, not Characteristic.
+  const Formats = hap.Formats ?? Characteristic.Formats
+  const Perms = hap.Perms ?? Characteristic.Perms
 
   class ConsumptionCharacteristic extends Characteristic {
     constructor() {

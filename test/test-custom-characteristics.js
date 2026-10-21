@@ -24,3 +24,42 @@ describe('ConsumptionCharacteristic', function() {
     })
   })
 })
+
+describe('custom characteristics (Homebridge 2.x hap shape)', function() {
+  it('should work when Formats/Perms are only on hap namespace', function() {
+    const EventEmitter = require('events')
+
+    class Characteristic extends EventEmitter {
+      constructor(displayName, UUID) {
+        super()
+        this.displayName = displayName
+        this.UUID = UUID
+        this.props = {}
+      }
+
+      setProps(props) {
+        this.props = props
+        return this
+      }
+
+      getDefaultValue() {
+        return 0
+      }
+    }
+
+    const homebridge = {
+      hap: {
+        Characteristic,
+        Formats: { FLOAT: 'float' },
+        Perms: { READ: 'pr', NOTIFY: 'pn' },
+      },
+    }
+
+    const { ConsumptionCharacteristic } =
+      require('../util/custom-characteristics')(homebridge)
+
+    const char = new ConsumptionCharacteristic()
+    char.props.format.should.equal('float')
+    char.props.perms.should.containEql('pr')
+  })
+})
